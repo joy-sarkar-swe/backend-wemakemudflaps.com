@@ -27,7 +27,7 @@ export const updateShippingMethod = async (
   userId: string
 ): Promise<ShippingMethod> => {
   if (data.title) shippingMethod.title = data.title;
-  if (data.status) shippingMethod.status = data.status;
+  if (data.status !== undefined) shippingMethod.status = data.status;
   if (data.description) shippingMethod.description = data.description;
 
   // Reset all embedded method types
